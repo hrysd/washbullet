@@ -1,5 +1,7 @@
-require "pushbullet/version"
+require 'pushbullet/client'
 
 module Pushbullet
-  # Your code goes here...
+  def self.client(api_key)
+    Client.new(api_key)
+  end
 end

@@ -1,6 +1,6 @@
 # Pushbullet
 
-TODO: Write a gem description
+Ruby client of [Pushbullet](https://www.pushbullet.com/) API.
 
 ## Installation
 
