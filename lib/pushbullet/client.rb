@@ -1,5 +1,5 @@
 require 'faraday'
-
+require 'mime/types'
 require 'pushbullet/request'
 
 module Pushbullet
@@ -36,8 +36,9 @@ module Pushbullet
       push(:list, device_id, title: title, items: items)
     end
 
-    def push_file(device_id, file)
-      io = Faraday::UploadIO.new(file, 'image/png')
+    def push_file(device_id, file_path)
+      mime_type = MIME::Types.type_for(file_path)[0].to_s
+      io        = Faraday::UploadIO.new(file_path, mime_type)
 
       push(:file, device_id, file: io)
     end
