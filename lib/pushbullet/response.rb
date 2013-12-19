@@ -1,7 +1,9 @@
 require 'pry'
 
-module Response
-  def self.create(res)
-    binding.pry
+module Pushbullet
+  class Response
+    def initialize(res)
+      binding.pry
+    end
   end
 end

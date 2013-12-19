@@ -1,20 +1,27 @@
-module Request
-  def get(path)
-    request(:get, path)
-  end
+require 'pushbullet/connection'
+require 'pushbullet/response'
 
-  def post(path, options)
-    request(:post, path, options)
-  end
+module Pushbullet
+  module Request
+    include Connection
 
-  private
-
-  def request(method, path, options = {})
-    response = connection.send(method) do |request|
-      request.url path
-      request.body = options if method == :post
+    def get(path)
+      request(:get, path)
     end
 
-    Response.create(response)
+    def post(path, options)
+      request(:post, path, options)
+    end
+
+    private
+
+    def request(method, path, options = {})
+      response = connection.send(method) do |request|
+        request.url path
+        request.body = options if method == :post
+      end
+
+      Response.new(response)
+    end
   end
 end

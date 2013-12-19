@@ -1,12 +1,9 @@
 require 'faraday'
 
 require 'pushbullet/request'
-require 'pushbullet/response'
-require 'pushbullet/connection'
 
 module Pushbullet
   class Client
-    include Connection
     include Request
 
     attr_accessor :api_key
