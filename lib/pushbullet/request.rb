@@ -1,5 +1,4 @@
 require 'pushbullet/connection'
-require 'pushbullet/response'
 
 module Pushbullet
   module Request
@@ -9,19 +8,17 @@ module Pushbullet
       request(:get, path)
     end
 
-    def post(path, options)
-      request(:post, path, options)
+    def post(path, payload)
+      request(:post, path, payload)
     end
 
     private
 
-    def request(method, path, options = {})
-      response = connection.send(method) do |request|
+    def request(method, path, payload = {})
+      response = connection.send(method) {|request|
         request.url path
-        request.body = options if method == :post
-      end
-
-      Response.new(response)
+        request.body = payload if method == :post
+      }
     end
   end
 end

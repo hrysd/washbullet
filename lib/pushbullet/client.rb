@@ -1,52 +1,19 @@
 require 'faraday'
 require 'mime/types'
 require 'pushbullet/request'
+require 'pushbullet/api'
+require 'pushbullet/secret_api'
 
 module Pushbullet
   class Client
     include Request
+    include API
+    include SecretAPI
 
-    attr_accessor :api_key
+    attr_reader :api_key
 
     def initialize(api_key)
       @api_key = api_key
-    end
-
-    def devices
-      get('/api/devices')
-    end
-
-    def contacts
-      get('/v2/contacts')
-    end
-
-    def push_note(device_id, title, body)
-      push(:note, device_id, title: title, body: body)
-    end
-
-    def push_link(device_id, title, url)
-      push(:link, device_id, title: title, url: url)
-    end
-
-    def push_address(device_id, title, address)
-      push(:address, device_id, title: title, address: address)
-    end
-
-    def push_list(device_id, title, items)
-      push(:list, device_id, title: title, items: items)
-    end
-
-    def push_file(device_id, file_path)
-      mime_type = MIME::Types.type_for(file_path)[0].to_s
-      io        = Faraday::UploadIO.new(file_path, mime_type)
-
-      push(:file, device_id, file: io)
-    end
-
-    private
-
-    def push(type, device_id, payload)
-      post('/api/pushes', payload.merge(device_id: device_id, type: type))
     end
   end
 end

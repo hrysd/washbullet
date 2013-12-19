@@ -1,3 +1,6 @@
+require 'pushbullet/http_exception'
+require 'pushbullet/parse_json'
+
 module Pushbullet
   module Connection
     private
@@ -8,6 +11,9 @@ module Pushbullet
         f.request :url_encoded
 
         f.response :logger
+
+        f.use Pushbullet::ParseJSON
+        f.use Pushbullet::HttpException
 
         f.adapter :net_http
       end
