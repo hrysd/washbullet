@@ -4,21 +4,57 @@ Ruby client of [Pushbullet](https://www.pushbullet.com/) API.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'pushbullet'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install pushbullet
+```
+$ git clone git@github.com:hrysd/pushbullet.git
+$ cd path/to/pushbullet
+$ bundle install
+$ bundle exec rake build
+$ bundle exec rake install
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+#### Setup Client
+
+```ruby
+client = Pushbullet::Client.new('YOUR_API_KEY')
+```
+
+#### Push to own device
+
+You can send following list:
+- note
+- link
+- address
+- list
+- file
+
+```ruby
+# get json about own device list
+client.devices
+
+client.push_note(DEVICE_ID, 'This is Title', 'This is Body!!!!')
+client.push_file(DEVICE_ID, 'File Name', 'path/to/file')
+```
+
+#### :secret: Push to Friend's device :secret:
+
+You can send following list:
+- note
+- link
+- address
+- list
+
+```ruby
+# get json about friend list of Pushbullet
+client.contacts
+
+client.push_note_to('friend@email.com', 'Hi!!!', 'This is Body!!!!')
+```
+
+## TODO
+
+- test test test...
 
 ## Contributing
 
