@@ -1,0 +1,31 @@
+{
+  "iden": "ubd",
+  "api_key": "",
+  "email": "",
+  "email_normalized": "",
+  "admin": true,
+  "created": 1357941753.8287899,
+  "modified": 1399325992.1842301,
+  "google_id": "110038027176632715601",
+  "google_userinfo": {
+    "family_name": "Oldenburg",
+    "name": "Ryan Oldenburg",
+    "picture": "",
+    "locale": "en",
+    "gender": "male",
+    "email": "",
+    "link": "",
+    "given_name": "Ryan",
+    "id": "110038027176632715601",
+    "hd": "",
+    "verified_email": true
+  },
+  "preferences": {
+    "onboarding": {
+      "app": false,
+      "friends": false,
+      "extension": false
+    },
+    "social": false
+  }
+}
