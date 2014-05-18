@@ -3,13 +3,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'pushbullet/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = 'pushbullet'
+  gem.name          = 'pushbullet-ruby'
   gem.version       = Pushbullet::VERSION
   gem.authors       = ['Hiroshi Yoshida']
   gem.email         = ['hrysd22@gmail.com']
   gem.summary       = %q{Ruby client of Pushbullet API.}
   gem.description   = %q{Ruby client of Pushbullet API.}
-  gem.homepage      = 'http://hrysd.org'
+  gem.homepage      = 'https://github.com/hrysd/pushbullet-ruby'
   gem.license       = 'MIT'
 
   gem.files         = `git ls-files`.split($/)
