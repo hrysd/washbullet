@@ -1,6 +1,6 @@
 # Pushbullet
 
-Ruby client of [Pushbullet](https://www.pushbullet.com/) API.
+Ruby client of [Pushbullet](https://www.pushbullet.com/).
 
 ## Installation
 
@@ -30,31 +30,35 @@ You can send following list:
 - file
 
 ```ruby
-# get json about own device list
+# Get own device list
 client.devices
 
-client.push_note(DEVICE_ID, 'This is Title', 'This is Body!!!!')
-client.push_file(DEVICE_ID, 'File Name', 'path/to/file')
-```
+# note
+client.push_note(device_iden, 'Title of note', 'A note's content')
 
-#### :secret: Push to Friend's device :secret:
+# link
+client.push_link(device_iden, 'Title of link', 'https://www.pushbullet.com', 'This website is awesome.')
 
-You can send following list:
-- note
-- link
-- address
-- list
+# address
+client.push_address(device_iden, 'Name of address', 'Addrss of place')
 
-```ruby
-# get json about friend list of Pushbullet
+# list
+client.push_list(device_iden, 'Title of lists', [{text: 'Buy milk', checked: true}, {text: 'Buy Soy milk', checked: false}])
+
+# file
+client.push_file(device_iden, 'File name', 'path/to/file', 'An optional message')
+
+# Get friend list of Pushbullet
 client.contacts
 
-client.push_note_to('friend@email.com', 'Hi!!!', 'This is Body!!!!')
+# Get self info
+client.me
 ```
 
 ## TODO
 
-- test test test...
+- push friend's device
+- test...
 
 ## Contributing
 
