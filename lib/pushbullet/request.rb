@@ -1,23 +1,24 @@
-require 'pushbullet/connection'
-
 module Pushbullet
   module Request
-    include Connection
-
-    def get(path)
-      request(:get, path)
+    def get(path, params = {})
+      request(:get, path, params)
     end
 
     def post(path, payload)
       request(:post, path, payload)
     end
 
+    def delete(path)
+      request(:delete, path)
+    end
+
     private
 
-    def request(method, path, payload = {})
+    def request(method, path, params = {})
       response = connection.send(method) {|request|
         request.url path
-        request.body = payload if method == :post
+        request.params = params if method == :get
+        request.body   = params if method == :post
       }
     end
   end

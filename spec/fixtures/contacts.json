@@ -1,0 +1,16 @@
+{
+  "contacts":[
+    {
+      "iden": "ubdcjAfszs0Smi",
+      "status": "user",
+      "name": "Ryan Oldenburg",
+      "created": 1399011660.4298899,
+      "modified": 1399011660.42976,
+      "id": 5695496404336640,
+      "source": "user",
+      "email": "ryanjoldenburg@gmail.com"
+      "email_normalized": "ryanjoldenburg@gmail.com",
+      "active": true
+    }
+  ]
+}

@@ -1,5 +1,3 @@
-require 'faraday'
-
 module Pushbullet
   class BadRequest    < StandardError; end
   class Unauthorized  < StandardError; end

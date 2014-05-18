@@ -1,0 +1,14 @@
+{
+  "file_type":"image/png",
+  "file_name":"image.png",
+  "file_url":"https://s3.amazonaws.com/pushbullet-uploads/ubd-VWb1dP5XrZzvHReWHCycIwPyuAMp2R9I/image.png",
+  "upload_url":"https://s3.amazonaws.com/pushbullet-uploads",
+  "data":{
+    "awsaccesskeyid":"AKIAJJIUQPUDGPM4GD3W",
+    "acl":"public-read",
+    "key":"ubd-CWb1dP5XrZzvHReWHCycIwPyuAMp2R9I/image.png",
+    "signature":"UX5s1uIy1ov6+xlj58JY7rGFKcs=",
+    "policy":"eyKjb25kaXRpb25zIjogW3siYnVja2V0IjogInB1c2hidWxsZXQtdXBsb2FkcyJ9LCB7ImtleSI6ICJ1YmQtVldiMWRQNVhyWnp2SFJlV0hDeWNJd1B5dUFNcDJSOUkvaW1hZ2UucG5nIn0sIHsiYWNsIjogInB1YmxpYy1yZWFkIn0sIFsiY29udGVudC1sZW5ndGgtcmFuZ2UiLCAxLCAyNjIxNDQwMF0sIFsiZXEiLCAiJENvbnRlbnQtVHlwZSIsICJpbWFnZS9wbmciXV0sICJleHBpcmF0aW9uIjogIjIwMTQtMDUtMDVUMjI6NTE6MzcuMjM0MTMwWiJ9",
+    "content-type":"image/png"
+  }
+}
