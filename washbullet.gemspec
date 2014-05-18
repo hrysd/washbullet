@@ -1,15 +1,15 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'pushbullet/version'
+require 'washbullet/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = 'pushbullet-ruby'
-  gem.version       = Pushbullet::VERSION
+  gem.name          = 'washbullet'
+  gem.version       = Washbullet::VERSION
   gem.authors       = ['Hiroshi Yoshida']
   gem.email         = ['hrysd22@gmail.com']
   gem.summary       = %q{Ruby client of Pushbullet API.}
   gem.description   = %q{Ruby client of Pushbullet API.}
-  gem.homepage      = 'https://github.com/hrysd/pushbullet-ruby'
+  gem.homepage      = 'https://github.com/hrysd/washbullet'
   gem.license       = 'MIT'
 
   gem.files         = `git ls-files`.split($/)

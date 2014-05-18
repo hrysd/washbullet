@@ -1,4 +1,4 @@
-module Pushbullet
+module Washbullet
   module API
     module Pushes
       def push_note(device_iden, title, body)

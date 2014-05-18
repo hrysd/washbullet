@@ -1,7 +1,7 @@
-module Pushbullet
+module Washbullet
   class BasicAuthentication < Faraday::Request::BasicAuthentication
     def call(env)
-      if env.url.to_s.match(Pushbullet::Client::ENDPOINT)
+      if env.url.to_s.match(Washbullet::Client::ENDPOINT)
         env.request_headers[KEY] = @header_value
       end
 

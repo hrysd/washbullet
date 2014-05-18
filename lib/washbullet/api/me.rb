@@ -1,4 +1,4 @@
-module Pushbullet
+module Washbullet
   module API
     module Me
       def me
