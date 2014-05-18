@@ -34,7 +34,7 @@ You can send following list:
 client.devices
 
 # note
-client.push_note(device_iden, 'Title of note', 'A note's content')
+client.push_note(device_iden, 'Title of note', 'A note\'s content')
 
 # link
 client.push_link(device_iden, 'Title of link', 'https://www.pushbullet.com', 'This website is awesome.')
