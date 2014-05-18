@@ -1,9 +1,5 @@
-require 'pushbullet/connection'
-
 module Pushbullet
   module Request
-    include Connection
-
     def get(path, params = {})
       request(:get, path, params)
     end

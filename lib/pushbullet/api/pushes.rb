@@ -1,10 +1,6 @@
-require 'pushbullet/api/upload_request'
-
 module Pushbullet
   module API
     module Pushes
-      include UploadRequest
-
       # title - The note's title.
       # body - The note's message.
       def push_note(device_iden, title, body)
@@ -25,9 +21,9 @@ module Pushbullet
       end
 
       # title - The list's title.
-      # items - The list items. [{text: 'lorem', checked: false}, {text: 'ipsum', checked: true}]
+      # items - The list items.
+      # [{text: 'lorem', checked: false}, {text: 'ipsum', checked: true}]
       def push_list(device_iden, title, items)
-        lorem ipsum
         push :list, device_iden, title: title, items: items
       end
 
@@ -36,7 +32,7 @@ module Pushbullet
       # file_url  - The url where the file can be downloaded.
       # body      - An optional message.
       def push_file(device_iden, file_name, file_path, body)
-        something(file_name, file_path) do |data|
+        upload_file(file_name, file_path) do |data|
           payload = {
             file_name: data['file_name'],
             file_type: data['file_type'],
@@ -54,6 +50,25 @@ module Pushbullet
       end
 
       private
+
+      def upload_file(file_name, file_path, &block)
+        mime_type = MIME::Types.type_for(file_path).first.to_s
+
+        data = upload_request(file_name, mime_type)
+
+        upload_url = data.body['upload_url']
+        payload    = data.body['data']
+
+        io   = Faraday::UploadIO.new(file_path, mime_type)
+
+        post upload_url, payload.merge(file: io)
+
+        yield data.body
+      end
+
+      def upload_request(file_name, mime_type)
+        get '/v2/upload-request', file_name: file_name, file_type: mime_type
+      end
 
       def push(type, device_iden, payload)
         post '/v2/pushes', payload.merge(device_iden: device_iden, type: type)
