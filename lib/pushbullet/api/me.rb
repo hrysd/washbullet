@@ -1,7 +1,7 @@
 module Pushbullet
   module API
-    module Users
-      def users
+    module Me
+      def me
         get '/v2/users/me'
       end
     end
