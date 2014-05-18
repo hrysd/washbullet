@@ -1,36 +1,22 @@
 module Pushbullet
   module API
     module Pushes
-      # title - The note's title.
-      # body - The note's message.
       def push_note(device_iden, title, body)
         push :note, device_iden, title: title, body: body
       end
 
-      # title - The link's title.
-      # url - The url to open.
-      # body - An optional message.
       def push_link(device_iden, title, url, body)
         push :link, device_iden, title: title, url: url, body: body
       end
 
-      # name - The place's name.
-      # address - The place's address or a map search query.
       def push_address(device_iden, name, address)
         push :address, device_iden, name: name, address: address
       end
 
-      # title - The list's title.
-      # items - The list items.
-      # [{text: 'lorem', checked: false}, {text: 'ipsum', checked: true}]
       def push_list(device_iden, title, items)
         push :list, device_iden, title: title, items: items
       end
 
-      # file_name - The name of the file.
-      # file_type - The file's MIME type.
-      # file_url  - The url where the file can be downloaded.
-      # body      - An optional message.
       def push_file(device_iden, file_name, file_path, body)
         upload_file(file_name, file_path) do |data|
           payload = {
@@ -44,8 +30,6 @@ module Pushbullet
         end
       end
 
-      # modified_after - Request pushes modified after this timestamp.
-      # cursor - Request another page of pushes (if necessary).
       def pushes(modified_after = nil, cursor = nil)
         params = {modified_after: modified_after, cursor: cursor}
 
@@ -54,7 +38,6 @@ module Pushbullet
         get 'v2/pushes', params
       end
 
-      # push_iden - The iden of the push to delete.
       def delete_push(push_iden)
         delete "/v2/pushes/#{push_iden}"
       end
