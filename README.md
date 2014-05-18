@@ -1,11 +1,11 @@
-# Pushbullet
+# Washbullet
 
 Ruby client of [Pushbullet](https://www.pushbullet.com/).
 
 ## Installation
 
 ```
-$ gem install pushbullet-ruby
+$ gem install washbullet
 ```
 
 ## Usage
@@ -13,9 +13,7 @@ $ gem install pushbullet-ruby
 #### Setup Client
 
 ```ruby
-require 'pushbullet'
-
-client = Pushbullet::Client.new('YOUR_API_KEY')
+client = Washbullet::Client.new('YOUR_API_KEY')
 ```
 
 #### Push to own device
@@ -60,7 +58,7 @@ client.me
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/pushbullet/fork )
+1. Fork it ( http://github.com/hrysd/washbullet/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

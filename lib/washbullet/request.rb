@@ -1,4 +1,4 @@
-module Pushbullet
+module Washbullet
   module Request
     def get(path, params = {})
       request(:get, path, params)

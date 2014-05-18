@@ -1,13 +1,13 @@
 require 'faraday'
 require 'mime/types'
 
-require 'pushbullet/api'
-require 'pushbullet/basic_authentication'
-require 'pushbullet/http_exception'
-require 'pushbullet/parse_json'
-require 'pushbullet/request'
+require 'washbullet/api'
+require 'washbullet/basic_authentication'
+require 'washbullet/http_exception'
+require 'washbullet/parse_json'
+require 'washbullet/request'
 
-module Pushbullet
+module Washbullet
   class Client
     include Request
     include API
@@ -25,9 +25,9 @@ module Pushbullet
         f.request :multipart
         f.request :url_encoded
 
-        f.use Pushbullet::BasicAuthentication, @api_key, ''
-        f.use Pushbullet::ParseJSON
-        f.use Pushbullet::HttpException
+        f.use Washbullet::BasicAuthentication, @api_key, ''
+        f.use Washbullet::ParseJSON
+        f.use Washbullet::HttpException
 
         f.adapter :net_http
       end
@@ -38,7 +38,7 @@ module Pushbullet
         :builder => middleware,
         :headers => {
           :accept     => 'application/json',
-          :user_agent => "Pushbullet Ruby Gem #{Pushbullet::VERSION}",
+          :user_agent => "Washbullet Ruby Gem #{Washbullet::VERSION}",
         }
       }
     end

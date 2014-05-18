@@ -1,4 +1,4 @@
-module Pushbullet
+module Washbullet
   module API
     module Contacts
       def contacts

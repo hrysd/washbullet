@@ -1,4 +1,4 @@
-module Pushbullet
+module Washbullet
   class BadRequest    < StandardError; end
   class Unauthorized  < StandardError; end
   class RequestFailed < StandardError; end
@@ -11,17 +11,17 @@ module Pushbullet
       @app.call(env).on_complete do |response|
         case response[:status].to_i
         when 400
-          raise Pushbullet::BadRequest,    'Often missing a required parameter'
+          raise Washbullet::BadRequest,    'Often missing a required parameter'
         when 401
-          raise Pushbullet::Unauthorized,  'No valid API key provided'
+          raise Washbullet::Unauthorized,  'No valid API key provided'
         when 402
-          raise Pushbullet::RequestFailed, 'Parameters were valid but the request failed'
+          raise Washbullet::RequestFailed, 'Parameters were valid but the request failed'
         when 403
-          raise Pushbullet::Forbidden,     'The API key is not valid for that request'
+          raise Washbullet::Forbidden,     'The API key is not valid for that request'
         when 404
-          raise Pushbullet::NotFound,      'The requested item doesn\'t exist'
+          raise Washbullet::NotFound,      'The requested item doesn\'t exist'
         when 500..505
-          raise Pushbullet::ServerError,   'Something went wrong on PushBullet\'s side'
+          raise Washbullet::ServerError,   'Something went wrong on PushBullet\'s side'
         end
       end
     end

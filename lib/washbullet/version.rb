@@ -1,3 +1,3 @@
-module Pushbullet
+module Washbullet
   VERSION = '0.2.0'
 end
