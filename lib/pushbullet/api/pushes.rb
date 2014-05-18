@@ -44,6 +44,16 @@ module Pushbullet
         end
       end
 
+      # modified_after - Request pushes modified after this timestamp.
+      # cursor - Request another page of pushes (if necessary).
+      def pushes(modified_after = nil, cursor = nil)
+        params = {modified_after: modified_after, cursor: cursor}
+
+        params = params.values.all?(&:nil?) ? {} : params
+
+        get 'v2/pushes', params
+      end
+
       # push_iden - The iden of the push to delete.
       def delete_push(push_iden)
         delete "/v2/pushes/#{push_iden}"
