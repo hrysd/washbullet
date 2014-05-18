@@ -5,11 +5,7 @@ Ruby client of [Pushbullet](https://www.pushbullet.com/).
 ## Installation
 
 ```
-$ git clone git@github.com:hrysd/pushbullet.git
-$ cd path/to/pushbullet
-$ bundle install
-$ bundle exec rake build
-$ bundle exec rake install
+$ gem install pushbullet-ruby
 ```
 
 ## Usage
@@ -17,6 +13,8 @@ $ bundle exec rake install
 #### Setup Client
 
 ```ruby
+require 'pushbullet'
+
 client = Pushbullet::Client.new('YOUR_API_KEY')
 ```
 
