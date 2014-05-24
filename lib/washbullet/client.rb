@@ -6,6 +6,7 @@ require 'washbullet/basic_authentication'
 require 'washbullet/http_exception'
 require 'washbullet/parse_json'
 require 'washbullet/request'
+require 'washbullet/version'
 
 module Washbullet
   class Client
