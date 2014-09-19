@@ -1,7 +1,7 @@
 module Washbullet
   module API
     module Devices
-      def devices
+      def get_devices
         get '/v2/devices'
       end
 

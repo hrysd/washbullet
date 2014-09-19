@@ -1,7 +1,7 @@
 module Washbullet
   module API
     module Contacts
-      def contacts
+      def get_contacts
         get '/v2/contacts'
       end
 
