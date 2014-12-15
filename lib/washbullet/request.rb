@@ -15,7 +15,7 @@ module Washbullet
     private
 
     def request(method, path, params = {})
-      response = connection.send(method) {|request|
+      connection.send(method) {|request|
         request.url path
         request.params = params if method == :get
         request.body   = params if method == :post
