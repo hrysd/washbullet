@@ -21,6 +21,23 @@ module Washbullet
       @api_key = api_key
     end
 
+
+    private
+
+    def connection
+      @connection ||= Faraday.new(ENDPOINT, connection_options)
+    end
+
+    def connection_options
+      @connection_options ||= {
+        builder: middleware,
+        headers: {
+          accept:     'application/json',
+          user_agent: "Washbullet Ruby Gem #{Washbullet::VERSION}",
+        }
+      }
+    end
+
     def middleware
       @middleware ||= Faraday::RackBuilder.new do |f|
         f.request :multipart
@@ -32,22 +49,6 @@ module Washbullet
 
         f.adapter :net_http
       end
-    end
-
-    def connection_options
-      @connection_options ||= {
-        :builder => middleware,
-        :headers => {
-          :accept     => 'application/json',
-          :user_agent => "Washbullet Ruby Gem #{Washbullet::VERSION}",
-        }
-      }
-    end
-
-    private
-
-    def connection
-      @connection ||= Faraday.new(ENDPOINT, connection_options)
     end
   end
 end
