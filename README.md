@@ -26,26 +26,21 @@ You can send following list:
 - file
 
 ```ruby
-# Get own device list
-client.devices
+client.push_note(
+  receiver:  :device, # :email, :channel, :client
+  identifer: 'abcdefg',
+  params: {
+    title: 'Title',
+    body:  'Contents'
+  }
+)
 
-# note
-client.push_note(device_iden, 'Title of note', 'A note\'s content')
-
-# link
-client.push_link(device_iden, 'Title of link', 'https://www.pushbullet.com', 'This website is awesome.')
-
-# address
-client.push_address(device_iden, 'Name of address', 'Addrss of place')
-
-# list
-client.push_list(device_iden, 'Title of lists', [{text: 'Buy milk', checked: true}, {text: 'Buy Soy milk', checked: false}])
-
-# file
-client.push_file(device_iden, 'File name', 'path/to/file', 'An optional message')
-
-# Get friend list of Pushbullet
-client.contacts
+device.receive(:note, title: 'Title', body: 'Content')
+contact.receive(:link,
+  title: 'title',
+  url: 'https://www.pushbullet.com',
+  body: 'Check it.'
+)
 
 # Get self info
 client.me

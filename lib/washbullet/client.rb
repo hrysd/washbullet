@@ -21,6 +21,17 @@ module Washbullet
       @api_key = api_key
     end
 
+    def devices
+      get_devices.body['devices'].map {|device_json|
+        Washbullet::Device.new(device_json, self)
+      }
+    end
+
+    def contacts
+      get_contacts.body['contacts'].map {|device_json|
+        Washbullet::Contact.new(device_json, self)
+      }
+    end
 
     private
 
@@ -36,17 +47,6 @@ module Washbullet
           user_agent: "Washbullet Ruby Gem #{Washbullet::VERSION}",
         }
       }
-    end
-    
-    def devices
-      return self.get_devices.body['devices'].map do |device_json|
-        Washbullet::Device.new(device_json, self)
-      end
-    end
-    def contacts
-      return self.get_contacts.body['contacts'].map do |device_json|
-        Washbullet::Contact.new(device_json, self)
-      end
     end
 
     def middleware

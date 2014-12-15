@@ -1,38 +1,43 @@
-
 module Washbullet
-  class Pushable < OpenStruct
-    attr_accessor :client
+  class Pushable
+    class MissingParameter < StandardError; end
 
-    def initialize(json_data, client)
-      @client=client
-      super json_data
+    attr_reader :client, :receiver, :identifer, :params
+
+    def self.push(client, receiver, identifer, params)
+      new(client, receiver, identifer, params).push
     end
 
-    def push_note(title, body)
-      push :note, push_id, title: title, body: body
+    def initialize(client, receiver, identifer, params)
+      @client    = client
+      @receiver  = receiver
+      @identifer = identifer
+      @params    = params
     end
 
-    def push_link(title, url, body)
-      push :link, push_id, title: title, url: url, body: body
+    def type
+      self.class.name.downcase.to_sym
     end
 
-    def push_address(name, address)
-      push :address, push_id, name: name, address: address
+    def push
+      raise MissingParameter unless params.keys == requried_parameters
+
+      payload = params.merge(type: type)
+      payload = specify_receiver
+
+      client.post('/v2/pushes', payload)
     end
 
-    def push_list(title, items)
-      push :list, push_id, title: title, items: items
-    end
-    
-    def push_id
-      self.iden
+    def required_parameters
+      raise NotImplementedError
     end
 
-    private
-
-    def push(type, id, payload)
-      @client.send(:push, type, id, payload)
+    def specify_receiver(payload)
+      if receiver && identifer
+        payload.merge(receiver => identifer)
+      else
+        payload
+      end
     end
-
   end
 end
