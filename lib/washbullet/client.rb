@@ -37,6 +37,17 @@ module Washbullet
         }
       }
     end
+    
+    def devices
+      return self.get_devices.body['devices'].map do |device_json|
+        Washbullet::Device.new(device_json, self)
+      end
+    end
+    def contacts
+      return self.get_contacts.body['contacts'].map do |device_json|
+        Washbullet::Contact.new(device_json, self)
+      end
+    end
 
     def middleware
       @middleware ||= Faraday::RackBuilder.new do |f|

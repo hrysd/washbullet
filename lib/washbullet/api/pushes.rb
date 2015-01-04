@@ -66,6 +66,10 @@ module Washbullet
       def push(type, device_iden, payload)
         post '/v2/pushes', payload.merge(device_iden: device_iden, type: type)
       end
+      
+      def push_to_contact(type, email, payload)
+        post '/v2/pushes', payload.merge(email: email, type: type)
+      end
     end
   end
 end
