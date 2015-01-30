@@ -16,7 +16,7 @@ module Washbullet
         Washbullet::Pushable::Link.push(self, receiver, identifer, params)
       end
 
-      def push_link(receiver: nil, identifer: nil, params: {})
+      def push_address(receiver: nil, identifer: nil, params: {})
         Washbullet::Pushable::Address.push(self, receiver, identifer, params)
       end
 
