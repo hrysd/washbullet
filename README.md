@@ -10,13 +10,13 @@ $ gem install washbullet
 
 ## Usage
 
-#### Setup Client
+### Setup Client
 
 ```ruby
 client = Washbullet::Client.new('YOUR_API_KEY')
 ```
 
-#### Push to own device
+### Push
 
 You can send following list:
 - note
@@ -34,21 +34,41 @@ client.push_note(
     body:  'Contents'
   }
 )
+```
+
+### Devices
+
+```ruby
+# Get own devices
+client.devices
+
+# Push to device
 
 device.receive(:note, title: 'Title', body: 'Content')
+```
+
+### Contacts
+
+```ruby
+# Get friends list
+client.contacts
+
+# Push to friend
 contact.receive(:link,
   title: 'title',
-  url: 'https://www.pushbullet.com',
-  body: 'Check it.'
+  url:   'https://www.pushbullet.com',
+  body:  'Check it.'
 )
+```
 
-# Get self info
+### Get self info
+
+```
 client.me
 ```
 
 ## TODO
 
-- push friend's device
 - test...
 
 ## Contributing
