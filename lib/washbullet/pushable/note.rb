@@ -1,6 +1,10 @@
 module Washbullet
   class Pushable
-    class Note < Washbullet::Pushable
+    class Note < Pushable
+      def type
+        :note
+      end
+
       def required_parameters
         %i(title body)
       end

@@ -1,3 +1,5 @@
+require 'washbullet/push'
+
 module Washbullet
   class Pushable
     class MissingParameter < StandardError; end
@@ -5,7 +7,9 @@ module Washbullet
     attr_reader :client, :receiver, :identifer, :params
 
     def self.push(client, receiver, identifer, params)
-      new(client, receiver, identifer, params).push
+      response = new(client, receiver, identifer, params).push
+
+      Push.new(response.body)
     end
 
     def initialize(client, receiver, identifer, params)
@@ -15,17 +19,17 @@ module Washbullet
       @params    = params
     end
 
-    def type
-      self.class.name.downcase.to_sym
-    end
-
     def push
-      raise MissingParameter unless params.keys == requried_parameters
+      raise MissingParameter unless params.keys == required_parameters
 
       payload = params.merge(type: type)
-      payload = specify_receiver
+      payload = specify_receiver(payload)
 
       client.post('/v2/pushes', payload)
+    end
+
+    def type
+      raise NotImplementedError
     end
 
     def required_parameters

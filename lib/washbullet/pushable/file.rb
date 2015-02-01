@@ -12,7 +12,7 @@ module Washbullet
             file_name: data['file_name'],
             file_type: data['file_type'],
             file_url:  data['file_url'],
-            body:      body
+            body:      body,
             type:      type
           }
 
@@ -20,6 +20,10 @@ module Washbullet
 
           client.post('/v2/pushes', payload)
         end
+      end
+
+      def type
+        :file
       end
 
       def required_parameters

@@ -1,11 +1,15 @@
+require 'washbullet/entity'
+
 module Washbullet
   class Device < Entity
+    private
+
     def receiver
       :device
     end
 
     def identifer
-      self.iden
+      body['iden']
     end
   end
 end

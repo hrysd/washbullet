@@ -23,13 +23,13 @@ module Washbullet
 
     def devices
       get_devices.body['devices'].map {|device_json|
-        Washbullet::Device.new(device_json, self)
+        Washbullet::Device.new(device_json)
       }
     end
 
     def contacts
-      get_contacts.body['contacts'].map {|device_json|
-        Washbullet::Contact.new(device_json, self)
+      get_contacts.body['contacts'].map {|contacts_json|
+        Washbullet::Contact.new(contacts_json)
       }
     end
 
