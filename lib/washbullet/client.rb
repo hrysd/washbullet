@@ -44,7 +44,7 @@ module Washbullet
         builder: middleware,
         headers: {
           accept:     'application/json',
-          user_agent: "Washbullet Ruby Gem #{Washbullet::VERSION}",
+          user_agent: "Washbullet Ruby Gem #{Washbullet::VERSION}"
         }
       }
     end
