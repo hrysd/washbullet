@@ -1,17 +1,21 @@
-require 'washbullet/entity'
-
 module Washbullet
-  class Push < Entity
-    # TODO
-    #def update
-    #end
+  class Push
+    attr_reader :body
 
-    def delete(client)
-      client.delete("/v2/pushes/#{identifier}")
+    def initialize(response_body)
+      @body = response_body
     end
 
     def type
       body['type']
+    end
+
+    def created
+      Time.at(body['created'])
+    end
+
+    def modified
+      Time.at(body['modified'])
     end
 
     private

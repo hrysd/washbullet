@@ -2,7 +2,7 @@ module Washbullet
   class Pushable
     class File < Washbullet::Pushable
       def push
-        raise MissingParameter unless options.keys == requried_parameters
+        raise MissingParameter unless params.keys == required_parameters
 
         file_name = params[:file_name]
         file_path = params[:file_path]
@@ -12,7 +12,7 @@ module Washbullet
             file_name: data['file_name'],
             file_type: data['file_type'],
             file_url:  data['file_url'],
-            body:      body,
+            body:      params['body'],
             type:      type
           }
 
@@ -27,7 +27,7 @@ module Washbullet
       end
 
       def required_parameters
-        %i(file_name, file_path, body)
+        %i(file_name file_path body)
       end
 
       private
@@ -42,13 +42,13 @@ module Washbullet
 
         io = Faraday::UploadIO.new(file_path, mime_type)
 
-        post upload_url, params.merge(file: io)
+        client.post upload_url, params.merge(file: io)
 
         yield data.body
       end
 
       def upload_request(file_name, mime_type)
-        get '/v2/upload-request', file_name: file_name, file_type: mime_type
+        client.post '/v2/upload-request', file_name: file_name, file_type: mime_type
       end
     end
   end

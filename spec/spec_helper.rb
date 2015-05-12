@@ -1,3 +1,34 @@
+require 'pry'
+require 'json'
+
+require 'washbullet'
+require 'webmock/rspec'
+require 'vcr'
+
+def test_api_key
+  ENV.fetch('API_KEY', '<API_KEY>')
+end
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/vcr'
+  config.hook_into :webmock
+  config.configure_rspec_metadata!
+
+  config.filter_sensitive_data('<API_KEY>') do
+    test_api_key
+  end
+
+  config.before_record do |interaction|
+    next if interaction.response.body.empty?
+
+    response = JSON.parse(interaction.response.body)
+
+    response['iden'] = '<IDENTIFIER>' if response.has_key?('iden')
+
+    interaction.response.body = JSON.dump(response)
+  end
+end
+
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
