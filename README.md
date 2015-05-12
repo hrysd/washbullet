@@ -1,5 +1,7 @@
 # Washbullet
 
+[![Build Status](https://travis-ci.org/hrysd/washbullet.svg?branch=support-channel)](https://travis-ci.org/hrysd/washbullet)
+
 Ruby client of [Pushbullet](https://www.pushbullet.com/).
 
 ## Installation
