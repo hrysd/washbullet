@@ -1,8 +1,6 @@
 require 'washbullet/pushable'
-require 'washbullet/pushable/address'
 require 'washbullet/pushable/file'
 require 'washbullet/pushable/link'
-require 'washbullet/pushable/list'
 require 'washbullet/pushable/note'
 
 module Washbullet
