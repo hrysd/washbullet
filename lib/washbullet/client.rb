@@ -2,7 +2,7 @@ require 'faraday'
 require 'mime/types'
 
 require 'washbullet/api'
-require 'washbullet/basic_authentication'
+require 'washbullet/authorization'
 require 'washbullet/http_exception'
 require 'washbullet/parse_json'
 require 'washbullet/request'
@@ -54,7 +54,7 @@ module Washbullet
         f.request :multipart
         f.request :url_encoded
 
-        f.use Washbullet::BasicAuthentication, @api_key, ''
+        f.use Washbullet::Authorization, 'Bearer', api_key
         f.use Washbullet::ParseJSON
         f.use Washbullet::HttpException
 

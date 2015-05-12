@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://<API_KEY>:@api.pushbullet.com/v2/upload-request
+    uri: https://api.pushbullet.com/v2/upload-request
     body:
       encoding: UTF-8
       string: file_name=Green&file_type=image%2Fpng
@@ -13,6 +13,8 @@ http_interactions:
       - Washbullet Ruby Gem 0.3.1
       Content-Type:
       - application/x-www-form-urlencoded
+      Authorization:
+      - Bearer <API_KEY>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -20,16 +22,16 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=utf-8
       X-Ratelimit-Limit:
       - '16384'
       X-Ratelimit-Remaining:
-      - '16352'
+      - '16371'
       X-Ratelimit-Reset:
-      - '1431469647'
+      - '1431475410'
+      Content-Type:
+      - application/json; charset=utf-8
       Date:
-      - Tue, 12 May 2015 22:04:08 GMT
+      - Tue, 12 May 2015 23:42:35 GMT
       Server:
       - Google Frontend
       Cache-Control:
@@ -42,9 +44,9 @@ http_interactions:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"acl":"public-read","awsaccesskeyid":"AKIAJJIUQPUDGPM4GD3Q","content-type":"image/png","key":"ImDY2PkhZe0A2v29jr7c8DMEDldMT0vl/Green","policy":"eyJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJkbC5wdXNoYnVsbGV0dXNlcmNvbnRlbnQuY29tIn0seyJrZXkiOiJJbURZMlBraFplMEEydjI5anI3YzhETUVEbGRNVDB2bC9HcmVlbiJ9LHsiYWNsIjoicHVibGljLXJlYWQifSxbImNvbnRlbnQtbGVuZ3RoLXJhbmdlIiwxLDI2MjE0NDAwXSxbImVxIiwiJENvbnRlbnQtVHlwZSIsImltYWdlL3BuZyJdXSwiZXhwaXJhdGlvbiI6IjIwMTUtMDUtMTJUMjI6MzQ6MDguNTgwNDgzNjg4WiJ9","signature":"Wbq8T3GvNFWewRMKj2/2yLs4CW4="},"file_name":"Green","file_type":"image/png","file_url":"https://dl.pushbulletusercontent.com/ImDY2PkhZe0A2v29jr7c8DMEDldMT0vl/Green","upload_url":"https://s3-us-west-1.amazonaws.com/dl.pushbulletusercontent.com/"}'
+      string: '{"data":{"acl":"public-read","awsaccesskeyid":"AKIAJJIUQPUDGPM4GD3Q","content-type":"image/png","key":"DQixeG9Ep5D1xASPQHZL8PhMwutA0DNT/Green","policy":"eyJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJkbC5wdXNoYnVsbGV0dXNlcmNvbnRlbnQuY29tIn0seyJrZXkiOiJEUWl4ZUc5RXA1RDF4QVNQUUhaTDhQaE13dXRBMEROVC9HcmVlbiJ9LHsiYWNsIjoicHVibGljLXJlYWQifSxbImNvbnRlbnQtbGVuZ3RoLXJhbmdlIiwxLDI2MjE0NDAwXSxbImVxIiwiJENvbnRlbnQtVHlwZSIsImltYWdlL3BuZyJdXSwiZXhwaXJhdGlvbiI6IjIwMTUtMDUtMTNUMDA6MTI6MzUuNTkxODY2ODk3WiJ9","signature":"rTpbHIhfDYORJGGBGOhVlZ671c0="},"file_name":"Green","file_type":"image/png","file_url":"https://dl.pushbulletusercontent.com/DQixeG9Ep5D1xASPQHZL8PhMwutA0DNT/Green","upload_url":"https://s3-us-west-1.amazonaws.com/dl.pushbulletusercontent.com/"}'
     http_version: 
-  recorded_at: Tue, 12 May 2015 22:04:08 GMT
+  recorded_at: Tue, 12 May 2015 23:42:35 GMT
 - request:
     method: post
     uri: https://s3-us-west-1.amazonaws.com/dl.pushbulletusercontent.com/
@@ -59,19 +61,19 @@ http_interactions:
         YXJ0UG9zdA0KQ29udGVudC1EaXNwb3NpdGlvbjogZm9ybS1kYXRhOyBuYW1l
         PSJjb250ZW50LXR5cGUiDQoNCmltYWdlL3BuZw0KLS0tLS0tLS0tLS0tLVJ1
         YnlNdWx0aXBhcnRQb3N0DQpDb250ZW50LURpc3Bvc2l0aW9uOiBmb3JtLWRh
-        dGE7IG5hbWU9ImtleSINCg0KSW1EWTJQa2haZTBBMnYyOWpyN2M4RE1FRGxk
-        TVQwdmwvR3JlZW4NCi0tLS0tLS0tLS0tLS1SdWJ5TXVsdGlwYXJ0UG9zdA0K
+        dGE7IG5hbWU9ImtleSINCg0KRFFpeGVHOUVwNUQxeEFTUFFIWkw4UGhNd3V0
+        QTBETlQvR3JlZW4NCi0tLS0tLS0tLS0tLS1SdWJ5TXVsdGlwYXJ0UG9zdA0K
         Q29udGVudC1EaXNwb3NpdGlvbjogZm9ybS1kYXRhOyBuYW1lPSJwb2xpY3ki
         DQoNCmV5SmpiMjVrYVhScGIyNXpJanBiZXlKaWRXTnJaWFFpT2lKa2JDNXdk
         WE5vWW5Wc2JHVjBkWE5sY21OdmJuUmxiblF1WTI5dEluMHNleUpyWlhraU9p
-        SkpiVVJaTWxCcmFGcGxNRUV5ZGpJNWFuSTNZemhFVFVWRWJHUk5WREIyYkM5
+        SkVVV2w0WlVjNVJYQTFSREY0UVZOUVVVaGFURGhRYUUxM2RYUkJNRVJPVkM5
         SGNtVmxiaUo5TEhzaVlXTnNJam9pY0hWaWJHbGpMWEpsWVdRaWZTeGJJbU52
         Ym5SbGJuUXRiR1Z1WjNSb0xYSmhibWRsSWl3eExESTJNakUwTkRBd1hTeGJJ
         bVZ4SWl3aUpFTnZiblJsYm5RdFZIbHdaU0lzSW1sdFlXZGxMM0J1WnlKZFhT
-        d2laWGh3YVhKaGRHbHZiaUk2SWpJd01UVXRNRFV0TVRKVU1qSTZNelE2TURn
-        dU5UZ3dORGd6TmpnNFdpSjkNCi0tLS0tLS0tLS0tLS1SdWJ5TXVsdGlwYXJ0
+        d2laWGh3YVhKaGRHbHZiaUk2SWpJd01UVXRNRFV0TVROVU1EQTZNVEk2TXpV
+        dU5Ua3hPRFkyT0RrM1dpSjkNCi0tLS0tLS0tLS0tLS1SdWJ5TXVsdGlwYXJ0
         UG9zdA0KQ29udGVudC1EaXNwb3NpdGlvbjogZm9ybS1kYXRhOyBuYW1lPSJz
-        aWduYXR1cmUiDQoNCldicThUM0d2TkZXZXdSTUtqMi8yeUxzNENXND0NCi0t
+        aWduYXR1cmUiDQoNCnJUcGJISWhmRFlPUkpHR0JHT2hWbFo2NzFjMD0NCi0t
         LS0tLS0tLS0tLS1SdWJ5TXVsdGlwYXJ0UG9zdA0KQ29udGVudC1EaXNwb3Np
         dGlvbjogZm9ybS1kYXRhOyBuYW1lPSJmaWxlIjsgZmlsZW5hbWU9ImdyZWVu
         LnBuZyINCkNvbnRlbnQtTGVuZ3RoOiAyOTANCkNvbnRlbnQtVHlwZTogaW1h
@@ -101,28 +103,28 @@ http_interactions:
       message: No Content
     headers:
       X-Amz-Id-2:
-      - KAAhrBfyRctcJJsJm5atxE2roVGSHRHOKBbZRHe2PKhRzfEu1Z8j2Ek82U8Qu7OWky6vvg0qROI=
+      - 4omK++9sZC8OaBfdEUD0D021Cdcgz/b/gyuuphftbk443qsZtoiacEiagIHhUCbunz6Jy4Mor6I=
       X-Amz-Request-Id:
-      - 0B3EB78000E2148C
+      - 74A6A9AE2F5642C8
       Date:
-      - Tue, 12 May 2015 22:04:10 GMT
+      - Tue, 12 May 2015 23:42:37 GMT
       Etag:
       - '"2cbe92488a80151e63c44a565d0c717c"'
       Location:
-      - https://s3-us-west-1.amazonaws.com/dl.pushbulletusercontent.com/ImDY2PkhZe0A2v29jr7c8DMEDldMT0vl%2FGreen
+      - https://s3-us-west-1.amazonaws.com/dl.pushbulletusercontent.com/DQixeG9Ep5D1xASPQHZL8PhMwutA0DNT%2FGreen
       Server:
       - AmazonS3
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 12 May 2015 22:04:09 GMT
+  recorded_at: Tue, 12 May 2015 23:42:36 GMT
 - request:
     method: post
-    uri: https://<API_KEY>:@api.pushbullet.com/v2/pushes
+    uri: https://api.pushbullet.com/v2/pushes
     body:
       encoding: UTF-8
-      string: body=&file_name=Green&file_type=image%2Fpng&file_url=https%3A%2F%2Fdl.pushbulletusercontent.com%2FImDY2PkhZe0A2v29jr7c8DMEDldMT0vl%2FGreen&type=file
+      string: body=&file_name=Green&file_type=image%2Fpng&file_url=https%3A%2F%2Fdl.pushbulletusercontent.com%2FDQixeG9Ep5D1xASPQHZL8PhMwutA0DNT%2FGreen&type=file
     headers:
       Accept:
       - application/json
@@ -130,6 +132,8 @@ http_interactions:
       - Washbullet Ruby Gem 0.3.1
       Content-Type:
       - application/x-www-form-urlencoded
+      Authorization:
+      - Bearer <API_KEY>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -140,13 +144,13 @@ http_interactions:
       X-Ratelimit-Limit:
       - '16384'
       X-Ratelimit-Remaining:
-      - '16351'
+      - '16370'
       X-Ratelimit-Reset:
-      - '1431469647'
+      - '1431475410'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 12 May 2015 22:04:10 GMT
+      - Tue, 12 May 2015 23:42:37 GMT
       Server:
       - Google Frontend
       Cache-Control:
@@ -159,8 +163,8 @@ http_interactions:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"active":true,"iden":"<IDENTIFIER>","created":1431468249.9391577,"modified":1431468249.9481385,"type":"file","dismissed":false,"direction":"self","sender_iden":"ujDZntJ9gzY","sender_email":"hrysd22@gmail.com","sender_email_normalized":"hrysd22@gmail.com","sender_name":"Hiroshi
-        Yoshida","receiver_iden":"ujDZntJ9gzY","receiver_email":"hrysd22@gmail.com","receiver_email_normalized":"hrysd22@gmail.com","file_name":"Green","file_type":"image/png","file_url":"https://dl.pushbulletusercontent.com/ImDY2PkhZe0A2v29jr7c8DMEDldMT0vl/Green","image_url":"https://pushbulletusercontent.imgix.net/ImDY2PkhZe0A2v29jr7c8DMEDldMT0vl/Green"}'
+      string: '{"active":true,"iden":"<IDENTIFIER>","created":1431474157.6808612,"modified":1431474157.7013938,"type":"file","dismissed":false,"direction":"self","sender_iden":"ujDZntJ9gzY","sender_email":"hrysd22@gmail.com","sender_email_normalized":"hrysd22@gmail.com","sender_name":"Hiroshi
+        Yoshida","receiver_iden":"ujDZntJ9gzY","receiver_email":"hrysd22@gmail.com","receiver_email_normalized":"hrysd22@gmail.com","file_name":"Green","file_type":"image/png","file_url":"https://dl.pushbulletusercontent.com/DQixeG9Ep5D1xASPQHZL8PhMwutA0DNT/Green","image_url":"https://pushbulletusercontent.imgix.net/DQixeG9Ep5D1xASPQHZL8PhMwutA0DNT/Green"}'
     http_version: 
-  recorded_at: Tue, 12 May 2015 22:04:10 GMT
+  recorded_at: Tue, 12 May 2015 23:42:37 GMT
 recorded_with: VCR 2.9.3
