@@ -1,12 +1,18 @@
 module Washbullet
   module API
     module Devices
-      def get_devices
-        get '/v2/devices'
+      def devices
+        response = get('/v2/devices')
+
+        Washbullet::Device.from_response(response)
       end
 
-      def delete_device(device_iden)
-        delete "/v2/devices/#{device_iden}"
+      def update_device
+        raise NotImplementedError
+      end
+
+      def delete_device
+        raise NotImplementedError
       end
     end
   end

@@ -25,7 +25,18 @@ VCR.configure do |config|
 
     response['iden'] = '<IDENTIFIER>' if response.has_key?('iden')
 
-    interaction.response.body = JSON.dump(response)
+    response['devices'] = response['devices'].map {|device|
+      device.merge!({'iden' => '<IDENTIFIER>'})
+
+      if device['fingerprint']
+        device['fingerprint'] = JSON.parse(device['fingerprint'])
+        device['fingerprint'].merge!({'android_id' => '<ANDROID_ID>'})
+      end
+
+      device
+    } if response['devices']
+
+    interaction.response.body = response.to_json
   end
 end
 

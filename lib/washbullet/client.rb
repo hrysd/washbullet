@@ -21,12 +21,6 @@ module Washbullet
       @api_key = api_key
     end
 
-    def devices
-      get_devices.body['devices'].map {|device_json|
-        Washbullet::Device.new(device_json)
-      }
-    end
-
     def contacts
       get_contacts.body['contacts'].map {|contacts_json|
         Washbullet::Contact.new(contacts_json)
