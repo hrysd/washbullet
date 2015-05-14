@@ -21,12 +21,6 @@ module Washbullet
       @api_key = api_key
     end
 
-    def contacts
-      get_contacts.body['contacts'].map {|contacts_json|
-        Washbullet::Contact.new(contacts_json)
-      }
-    end
-
     private
 
     def connection

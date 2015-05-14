@@ -1,12 +1,22 @@
 module Washbullet
   module API
     module Contacts
-      def get_contacts
-        get '/v2/contacts'
+      def contacts
+        response = get('/v2/contacts')
+
+        Washbullet::Contact.from_response(response)
       end
 
-      def delete_contact(contact_iden)
-        delete "/v2/contacts/#{contact_iden}"
+      def create_contact
+        raise NotImplementedError
+      end
+
+      def update_contact
+        raise NotImplementedError
+      end
+
+      def delete_contact
+        raise NotImplementedError
       end
     end
   end
