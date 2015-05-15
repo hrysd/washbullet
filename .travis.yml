@@ -1,6 +1,3 @@
 language: ruby
 rvm:
   - 2.2.0
-notifications:
-  webhooks:
-    - https://idobata.io/hook/travis_ci/929ab950-8df9-405f-8a39-7189ab24cce2
