@@ -23,6 +23,7 @@ module Washbullet
       raise MissingParameter unless params.keys == required_parameters
 
       payload = params.merge(type: type)
+
       payload = specify_receiver(payload)
 
       client.post('/v2/pushes', payload)
@@ -38,9 +39,20 @@ module Washbullet
 
     def specify_receiver(payload)
       if receiver && identifer
-        payload.merge(receiver => identifer)
+        payload.merge(receiver_type => identifer)
       else
         payload
+      end
+    end
+
+    def receiver_type
+      case receiver
+      when :device  then :device_iden
+      when :email   then receiver
+      when :channel then :channel_tag
+      when :client  then :client_iden
+      else
+        raise NotImplementedError
       end
     end
   end
