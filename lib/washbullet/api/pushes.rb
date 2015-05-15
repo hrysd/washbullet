@@ -19,15 +19,11 @@ module Washbullet
       end
 
       def get_pushes(modified_after = nil, cursor = nil)
-        params = {modified_after: modified_after, cursor: cursor}
-
-        params = params.values.all?(&:nil?) ? {} : params
-
-        get 'v2/pushes', params
+        raise NotImplementedError
       end
 
       def delete_push(push_iden)
-        delete "/v2/pushes/#{push_iden}"
+        raise NotImplementedError
       end
     end
   end
