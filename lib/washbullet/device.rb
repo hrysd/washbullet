@@ -10,7 +10,7 @@ module Washbullet
       }
     end
 
-    def identifer
+    def identifier
       body['iden']
     end
 

@@ -4,19 +4,19 @@ module Washbullet
   class Pushable
     class MissingParameter < StandardError; end
 
-    attr_reader :client, :receiver, :identifer, :params
+    attr_reader :client, :receiver, :identifier, :params
 
-    def self.push(client, receiver, identifer, params)
-      response = new(client, receiver, identifer, params).push
+    def self.push(client, receiver, identifier, params)
+      response = new(client, receiver, identifier, params).push
 
       Push.new(response.body)
     end
 
-    def initialize(client, receiver, identifer, params)
-      @client    = client
-      @receiver  = receiver
-      @identifer = identifer
-      @params    = params
+    def initialize(client, receiver, identifier, params)
+      @client     = client
+      @receiver   = receiver
+      @identifier = identifier
+      @params     = params
     end
 
     def push
@@ -38,8 +38,8 @@ module Washbullet
     end
 
     def specify_receiver(payload)
-      if receiver && identifer
-        payload.merge(receiver_type => identifer)
+      if receiver && identifier
+        payload.merge(receiver_type => identifier)
       else
         payload
       end

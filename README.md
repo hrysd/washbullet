@@ -29,8 +29,8 @@ You can send following list:
 
 ```ruby
 client.push_note(
-  receiver:  :device, # :email, :channel, :client
-  identifer: 'abcdefg',
+  receiver:   :device, # :email, :channel, :client
+  identifier: 'abcdefg',
   params: {
     title: 'Title',
     body:  'Contents'

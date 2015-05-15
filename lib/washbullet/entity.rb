@@ -7,7 +7,7 @@ module Washbullet
     end
 
     def receive(type, params)
-      Pushable.get_const(type).push(receiver, identifer, params)
+      Pushable.get_const(type).push(receiver, identifier, params)
     end
 
     def created
@@ -24,7 +24,7 @@ module Washbullet
       raise NotImplementedError
     end
 
-    def identifer
+    def identifier
       raise NotImplementedError
     end
   end

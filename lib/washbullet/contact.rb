@@ -28,7 +28,7 @@ module Washbullet
       :email
     end
 
-    def identifer
+    def identifier
       body['email']
     end
   end
