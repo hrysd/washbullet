@@ -25,13 +25,17 @@ VCR.configure do |config|
 
     response['iden'] = '<IDENTIFIER>' if response.has_key?('iden')
 
-    %w(devices contacts).each do |key|
+    %w(devices contacts subscriptions).each do |key|
       response[key] = response[key].map {|entity|
         entity.merge!({'iden' => '<IDENTIFIER>'})
 
         if entity['fingerprint']
           entity['fingerprint'] = JSON.parse(entity['fingerprint'])
           entity['fingerprint'].merge!({'android_id' => '<ANDROID_ID>'})
+        end
+
+        if entity['channel']
+          entity['channel'].merge!({'iden' => '<IDENTIFIER>'})
         end
 
         entity

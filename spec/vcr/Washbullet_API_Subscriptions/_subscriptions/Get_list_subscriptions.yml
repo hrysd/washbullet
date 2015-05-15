@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pushbullet.com/v2/subscriptions
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Washbullet Ruby Gem 0.3.1
+      Authorization:
+      - Bearer <API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '16384'
+      X-Ratelimit-Remaining:
+      - '16248'
+      X-Ratelimit-Reset:
+      - '1431699827'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 15 May 2015 13:53:54 GMT
+      Server:
+      - Google Frontend
+      Cache-Control:
+      - private
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"accounts":[],"blocks":[],"channels":[],"chats":[],"clients":[],"contacts":[],"devices":[],"grants":[],"pushes":[],"subscriptions":[{"active":true,"iden":"<IDENTIFIER>","created":1431697791.3463821,"modified":1431697791.346389,"channel":{"iden":"<IDENTIFIER>","tag":"pushbullet","name":"Pushbullet
+        Updates","description":"Keep up with Pushbullet news and updates.","image_url":"https://pushbullet.imgix.net/ujxPklLhvyK-FaRmZExQiHx8tMvmSpUCItsuJeFY5eUo/pushbullet.png","website_url":"https://www.pushbullet.com"}},{"active":true,"iden":"<IDENTIFIER>","created":1431697440.6303182,"modified":1431697440.630324,"channel":{"iden":"<IDENTIFIER>","tag":"docs-hrysd-org","name":"docs.hrysd.org","description":"Notify
+        updates of http://docs.hrysd.org","image_url":"https://pushbullet.imgix.net/ujDZntJ9gzY-3grhPLQ2UFkJxIY4A0X8QxACVMvCsU1D/soymilk.png"}},{"active":false,"iden":"<IDENTIFIER>","created":1420533139.024703,"modified":1431697438.910903}]}'
+    http_version: 
+  recorded_at: Fri, 15 May 2015 13:53:54 GMT
+recorded_with: VCR 2.9.3

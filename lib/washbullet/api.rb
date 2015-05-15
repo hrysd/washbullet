@@ -1,7 +1,8 @@
 require 'washbullet/api/contacts'
 require 'washbullet/api/devices'
-require 'washbullet/api/pushes'
 require 'washbullet/api/me'
+require 'washbullet/api/pushes'
+require 'washbullet/api/subscriptions'
 
 module Washbullet
   module API
@@ -9,5 +10,6 @@ module Washbullet
     include Devices
     include Pushes
     include Me
+    include Subscriptions
   end
 end
