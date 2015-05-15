@@ -21,16 +21,15 @@ client = Washbullet::Client.new('YOUR_API_KEY')
 ### Push
 
 You can send following list:
+
 - note
 - link
-- address
-- list
 - file
 
 ```ruby
 client.push_note(
   receiver:   :device, # :email, :channel, :client
-  identifier: 'abcdefg',
+  identifier: '<IDENTIFIER>',
   params: {
     title: 'Title',
     body:  'Contents'
@@ -41,7 +40,7 @@ client.push_note(
 ### Devices
 
 ```ruby
-# Get own devices
+# Get own active devices
 client.devices
 
 # Push to device
