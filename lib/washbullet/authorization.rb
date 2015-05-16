@@ -1,5 +1,5 @@
 module Washbullet
-  class BasicAuthentication < Faraday::Request::BasicAuthentication
+  class Authorization < Faraday::Request::Authorization
     def call(env)
       if env.url.to_s.match(Washbullet::Client::ENDPOINT)
         env.request_headers[KEY] = @header_value

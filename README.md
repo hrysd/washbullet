@@ -1,5 +1,7 @@
 # Washbullet
 
+[![Build Status](https://travis-ci.org/hrysd/washbullet.svg?branch=support-channel)](https://travis-ci.org/hrysd/washbullet)
+
 Ruby client of [Pushbullet](https://www.pushbullet.com/).
 
 ## Installation
@@ -10,51 +12,86 @@ $ gem install washbullet
 
 ## Usage
 
-#### Setup Client
+### Setup Client
 
 ```ruby
 client = Washbullet::Client.new('YOUR_API_KEY')
 ```
 
-#### Push to own device
+### Push
 
 You can send following list:
+
 - note
 - link
-- address
-- list
 - file
 
 ```ruby
-# Get own device list
+client.push_note(
+  receiver:   :device, # :email, :channel, :client
+  identifier: '<IDENTIFIER>',
+  params: {
+    title: 'Title',
+    body:  'Contents'
+  }
+)
+```
+
+### Devices
+
+```ruby
+# Get own active devices
 client.devices
+```
 
-# note
-client.push_note(device_iden, 'Title of note', 'A note\'s content')
+### Contacts
 
-# link
-client.push_link(device_iden, 'Title of link', 'https://www.pushbullet.com', 'This website is awesome.')
-
-# address
-client.push_address(device_iden, 'Name of address', 'Addrss of place')
-
-# list
-client.push_list(device_iden, 'Title of lists', [{text: 'Buy milk', checked: true}, {text: 'Buy Soy milk', checked: false}])
-
-# file
-client.push_file(device_iden, 'File name', 'path/to/file', 'An optional message')
-
-# Get friend list of Pushbullet
+```ruby
+# Get friends list
 client.contacts
+```
 
-# Get self info
+### Get self info
+
+```
 client.me
 ```
 
-## TODO
+## Supported API
 
-- push friend's device
-- test...
+detail: https://docs.pushbullet.com/
+
+**Pushes**
+  - [X] Push to device
+  - [ ] Request push history
+  - [ ] Update a push
+  - [ ] Deleting a push
+  - [ ] Deleting all pushes
+
+**Devices**
+  - [X] Get the devices that can be pushed to
+  - [ ] Create a new device
+  - [ ] Update an existing device
+  - [ ] Delete a device
+
+**Contacts**
+  - [X] Get your contacts
+  - [ ] Create a contact
+  - [ ] Update a contact
+  - [ ] Delete a contact
+
+**Subscriptions**
+  - [ ] Subscribe to a channel
+  - [X] List subscriptions
+  - [ ] Unsubscribe from a channel
+  - [X] Get information about a channel
+
+**Users**
+  - [X] Get the current user
+  - [ ] Update the current user
+
+**Realtime Event Stream**
+  - Not yet
 
 ## Contributing
 

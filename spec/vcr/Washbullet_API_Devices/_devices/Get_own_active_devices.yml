@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pushbullet.com/v2/devices
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Washbullet Ruby Gem 0.3.1
+      Authorization:
+      - Bearer <API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Remaining:
+      - '16377'
+      X-Ratelimit-Reset:
+      - '1431587949'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '16384'
+      Date:
+      - Thu, 14 May 2015 07:15:40 GMT
+      Server:
+      - Google Frontend
+      Cache-Control:
+      - private
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"accounts":[],"blocks":[],"channels":[],"chats":[],"clients":[],"contacts":[],"devices":[{"active":false,"iden":"<IDENTIFIER>","created":1387280132.7686799,"modified":1431480934.910374,"pushable":false},{"active":false,"iden":"<IDENTIFIER>","created":1422957205.872742,"modified":1431480928.921741,"pushable":false},{"active":true,"iden":"<IDENTIFIER>","created":1431465614.9596338,"modified":1431465614.95964,"type":"ios","kind":"ios","nickname":"Hiroshi''s
+        iPhone","manufacturer":"Apple","model":"iPhone 5s (GSM)","app_version":5818,"push_token":"production:3b160046f296b775b730553db6b04a2f23f9b9202c91377abf0d44f591d4b579","pushable":true},{"active":true,"iden":"<IDENTIFIER>","created":1417673008.565792,"modified":1425227126.934442,"type":"android","kind":"android","nickname":"Asus
+        Nexus 7","manufacturer":"asus","model":"Nexus 7","app_version":143,"fingerprint":{"mac_address":"ac:22:0b:9c:dc:99","android_id":"<ANDROID_ID>"},"push_token":"APA91bHvVUyieD4Acu_qiWjADMtBWAGiNNl8zAGSp2LZ1lyWVch2AGtdyh74wjjvjkMYP1n_Xc1dqCvKWduzg4mhW4i7vurHiwBvWkq1mm17bGeFgqgJB2lYGkJlD14QqNOF8kv5A-S3cFBscM-kj6Yr3A395mQc4g","pushable":true,"icon":"tablet"},{"active":true,"iden":"<IDENTIFIER>","created":1387280197.86802,"modified":1423210269.815474,"type":"chrome","kind":"chrome","nickname":"Chrome","manufacturer":"Google","model":"Chrome","app_version":168,"pushable":true}],"grants":[],"pushes":[],"subscriptions":[]}'
+    http_version: 
+  recorded_at: Thu, 14 May 2015 07:17:06 GMT
+recorded_with: VCR 2.9.3

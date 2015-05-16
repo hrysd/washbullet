@@ -2,7 +2,7 @@ require 'faraday'
 require 'mime/types'
 
 require 'washbullet/api'
-require 'washbullet/basic_authentication'
+require 'washbullet/authorization'
 require 'washbullet/http_exception'
 require 'washbullet/parse_json'
 require 'washbullet/request'
@@ -19,18 +19,6 @@ module Washbullet
 
     def initialize(api_key)
       @api_key = api_key
-    end
-
-    def devices
-      get_devices.body['devices'].map do |device_json|
-        Washbullet::Device.new(device_json, self)
-      end
-    end
-
-    def contacts
-      get_contacts.body['contacts'].map do |device_json|
-        Washbullet::Contact.new(device_json, self)
-      end
     end
 
     private
@@ -54,7 +42,7 @@ module Washbullet
         f.request :multipart
         f.request :url_encoded
 
-        f.use Washbullet::BasicAuthentication, @api_key, ''
+        f.use Washbullet::Authorization, 'Bearer', api_key
         f.use Washbullet::ParseJSON
         f.use Washbullet::HttpException
 

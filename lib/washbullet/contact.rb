@@ -1,18 +1,35 @@
+require 'washbullet/entity'
 
 module Washbullet
-  class Contact < Pushable
-    
-    #for a contact the push id is an email
-    def push_id
-      self.email
+  class Contact < Entity
+    def self.from_response(response)
+      response.body['contacts'].each_with_object([]) {|attributes, memo|
+        next unless attributes['active']
+
+        memo << new(attributes)
+      }
     end
-    
+
+    def name
+      body['name']
+    end
+
+    def email
+      body['email']
+    end
+
+    def image_url
+      body['image_url']
+    end
+
     private
 
-    #contacts also use the push_to_contact method which passes along the email params
-    def push(type, email, payload)
-      @client.send(:push_to_contact, type, email, payload)
+    def receiver
+      :email
     end
-    
+
+    def identifier
+      body['email']
+    end
   end
 end

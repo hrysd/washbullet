@@ -1,38 +1,59 @@
+require 'washbullet/push'
 
 module Washbullet
-  class Pushable < OpenStruct
-    attr_accessor :client
+  class Pushable
+    class MissingParameter < StandardError; end
 
-    def initialize(json_data, client)
-      @client=client
-      super json_data
+    attr_reader :client, :receiver, :identifier, :params
+
+    def self.push(client, receiver, identifier, params)
+      response = new(client, receiver, identifier, params).push
+
+      Push.new(response.body)
     end
 
-    def push_note(title, body)
-      push :note, push_id, title: title, body: body
+    def initialize(client, receiver, identifier, params)
+      @client     = client
+      @receiver   = receiver
+      @identifier = identifier
+      @params     = params
     end
 
-    def push_link(title, url, body)
-      push :link, push_id, title: title, url: url, body: body
+    def push
+      raise MissingParameter unless params.keys == required_parameters
+
+      payload = params.merge(type: type)
+
+      payload = specify_receiver(payload)
+
+      client.post('/v2/pushes', payload)
     end
 
-    def push_address(name, address)
-      push :address, push_id, name: name, address: address
+    def type
+      raise NotImplementedError
     end
 
-    def push_list(title, items)
-      push :list, push_id, title: title, items: items
-    end
-    
-    def push_id
-      self.iden
+    def required_parameters
+      raise NotImplementedError
     end
 
-    private
-
-    def push(type, id, payload)
-      @client.send(:push, type, id, payload)
+    def specify_receiver(payload)
+      if receiver && identifier
+        payload.merge(receiver_type => identifier)
+      else
+        payload
+      end
     end
 
+    def receiver_type
+      case receiver
+      when :device  then :device_iden
+      when :email   then receiver
+      when :channel then :channel_tag
+      when :client  then :client_iden
+      else
+        raise NotImplementedError
+      end
+    end
   end
 end

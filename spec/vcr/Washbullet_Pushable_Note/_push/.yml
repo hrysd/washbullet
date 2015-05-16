@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pushbullet.com/v2/pushes
+    body:
+      encoding: UTF-8
+      string: body=body&title=title&type=note
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Washbullet Ruby Gem 0.3.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - Bearer <API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '16384'
+      X-Ratelimit-Remaining:
+      - '16368'
+      X-Ratelimit-Reset:
+      - '1431475410'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 12 May 2015 23:42:40 GMT
+      Server:
+      - Google Frontend
+      Cache-Control:
+      - private
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"active":true,"iden":"<IDENTIFIER>","created":1431474160.213009,"modified":1431474160.2159953,"type":"note","dismissed":false,"direction":"self","sender_iden":"ujDZntJ9gzY","sender_email":"hrysd22@gmail.com","sender_email_normalized":"hrysd22@gmail.com","sender_name":"Hiroshi
+        Yoshida","receiver_iden":"ujDZntJ9gzY","receiver_email":"hrysd22@gmail.com","receiver_email_normalized":"hrysd22@gmail.com","title":"title","body":"body"}'
+    http_version: 
+  recorded_at: Tue, 12 May 2015 23:42:40 GMT
+recorded_with: VCR 2.9.3

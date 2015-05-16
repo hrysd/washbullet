@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pushbullet.com/v2/contacts
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Washbullet Ruby Gem 0.3.1
+      Authorization:
+      - Bearer <API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '16384'
+      X-Ratelimit-Remaining:
+      - '16380'
+      X-Ratelimit-Reset:
+      - '1431591549'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 14 May 2015 08:13:01 GMT
+      Server:
+      - Google Frontend
+      Cache-Control:
+      - private
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"accounts":[],"blocks":[],"channels":[],"chats":[],"clients":[],"contacts":[{"active":false,"iden":"<IDENTIFIER>","created":1387347284.0415301,"modified":1423015250.699245},{"active":true,"iden":"<IDENTIFIER>","created":1387280676.0635,"modified":1387280676.0634398,"name":"kenchan","email":"kenichi.taka@gmail.com","email_normalized":"kenichitaka@gmail.com","image_url":"https://lh6.googleusercontent.com/-SRE_JtJNldA/AAAAAAAAAAI/AAAAAAAAPeo/-Zwzu80gOkE/photo.jpg","status":"user"},{"active":true,"iden":"<IDENTIFIER>","created":1387280230.9459999,"modified":1387280230.94592,"name":"ursm","email":"ursm@ursm.jp","email_normalized":"ursm@ursm.jp","image_url":"https://lh6.googleusercontent.com/-svfagNcM75E/AAAAAAAAAAI/AAAAAAAABLw/e-2eTG9f-HA/photo.jpg","status":"user"}],"devices":[],"grants":[],"pushes":[],"subscriptions":[]}'
+    http_version: 
+  recorded_at: Thu, 14 May 2015 08:14:27 GMT
+recorded_with: VCR 2.9.3
