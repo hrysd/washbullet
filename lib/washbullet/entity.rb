@@ -6,10 +6,6 @@ module Washbullet
       @body = response_body
     end
 
-    def receive(type, params)
-      Pushable.get_const(type).push(receiver, identifier, params)
-    end
-
     def created
       Time.at(body['created'])
     end

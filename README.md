@@ -42,10 +42,6 @@ client.push_note(
 ```ruby
 # Get own active devices
 client.devices
-
-# Push to device
-
-device.receive(:note, title: 'Title', body: 'Content')
 ```
 
 ### Contacts
@@ -53,13 +49,6 @@ device.receive(:note, title: 'Title', body: 'Content')
 ```ruby
 # Get friends list
 client.contacts
-
-# Push to friend
-contact.receive(:link,
-  title: 'title',
-  url:   'https://www.pushbullet.com',
-  body:  'Check it.'
-)
 ```
 
 ### Get self info
