@@ -57,9 +57,41 @@ client.contacts
 client.me
 ```
 
-## TODO
+## Supported API
 
-- test...
+detail: https://docs.pushbullet.com/
+
+**Pushes**
+  - [X] Push to device
+  - [ ] Request push history
+  - [ ] Update a push
+  - [ ] Deleting a push
+  - [ ] Deleting all pushes
+
+**Devices**
+  - [X] Get the devices that can be pushed to
+  - [ ] Create a new device
+  - [ ] Update an existing device
+  - [ ] Delete a device
+
+**Contacts**
+  - [X] Get your contacts
+  - [ ] Create a contact
+  - [ ] Update a contact
+  - [ ] Delete a contact
+
+**Subscriptions**
+  - [ ] Subscribe to a channel
+  - [X] List subscriptions
+  - [ ] Unsubscribe from a channel
+  - [X] Get information about a channel
+
+**Users**
+  - [X] Get the current user
+  - [ ] Update the current user
+
+**Realtime Event Stream**
+  - Not yet
 
 ## Contributing
 
