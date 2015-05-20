@@ -1,5 +1,6 @@
 # Washbullet
 
+[![Gem Version](https://badge.fury.io/rb/washbullet.svg)](http://badge.fury.io/rb/washbullet)
 [![Build Status](https://travis-ci.org/hrysd/washbullet.svg?branch=master)](https://travis-ci.org/hrysd/washbullet)
 
 Ruby client of [Pushbullet](https://www.pushbullet.com/).
