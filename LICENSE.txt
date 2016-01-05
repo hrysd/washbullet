@@ -1,4 +1,4 @@
-Copyright (c) 2013-2015 Hiroshi Yoshida
+Copyright (c) 2013-2016 Hiroshi Yoshida
 
 MIT License
 
