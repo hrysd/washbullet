@@ -24,7 +24,7 @@ RSpec.describe Washbullet::API::Subscriptions do
       let(:tag) { 'invalid' }
 
       specify 'raise error' do
-        expect { channel_info }.to raise_error
+        expect { channel_info }.to raise_error(Washbullet::BadRequest)
       end
     end
   end
