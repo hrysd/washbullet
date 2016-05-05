@@ -1,0 +1,236 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://upload.pushbullet.com/upload-legacy/fWYyEZsrOrd6ezsyE3FbYfJfdqHowRCb
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        LS0tLS0tLS0tLS0tLVJ1YnlNdWx0aXBhcnRQb3N0DQpDb250ZW50LURpc3Bv
+        c2l0aW9uOiBmb3JtLWRhdGE7IG5hbWU9ImFjbCINCg0KcHVibGljLXJlYWQN
+        Ci0tLS0tLS0tLS0tLS1SdWJ5TXVsdGlwYXJ0UG9zdA0KQ29udGVudC1EaXNw
+        b3NpdGlvbjogZm9ybS1kYXRhOyBuYW1lPSJhd3NhY2Nlc3NrZXlpZCINCg0K
+        QUtJQUpKSVVRUFVER1BNNEdEM1cNCi0tLS0tLS0tLS0tLS1SdWJ5TXVsdGlw
+        YXJ0UG9zdA0KQ29udGVudC1EaXNwb3NpdGlvbjogZm9ybS1kYXRhOyBuYW1l
+        PSJjb250ZW50LXR5cGUiDQoNCmltYWdlL3BuZw0KLS0tLS0tLS0tLS0tLVJ1
+        YnlNdWx0aXBhcnRQb3N0DQpDb250ZW50LURpc3Bvc2l0aW9uOiBmb3JtLWRh
+        dGE7IG5hbWU9ImtleSINCg0KRGhJb25QbEtkZ3lMZDVkczFqYW1PRUlyQVBs
+        MUhYSkovR3JlZW4NCi0tLS0tLS0tLS0tLS1SdWJ5TXVsdGlwYXJ0UG9zdA0K
+        Q29udGVudC1EaXNwb3NpdGlvbjogZm9ybS1kYXRhOyBuYW1lPSJwb2xpY3ki
+        DQoNCmV5S2piMjVrYVhScGIyNXpJalRFNk16Y3VNak0wTVRNd1dpSjkNCi0t
+        LS0tLS0tLS0tLS1SdWJ5TXVsdGlwYXJ0UG9zdA0KQ29udGVudC1EaXNwb3Np
+        dGlvbjogZm9ybS1kYXRhOyBuYW1lPSJzaWduYXR1cmUiDQoNClVYNXMxdUl5
+        MW92Nit4bGo1OEpZN3JHRktjcz0NCi0tLS0tLS0tLS0tLS1SdWJ5TXVsdGlw
+        YXJ0UG9zdA0KQ29udGVudC1EaXNwb3NpdGlvbjogZm9ybS1kYXRhOyBuYW1l
+        PSJmaWxlIjsgZmlsZW5hbWU9ImdyZWVuLnBuZyINCkNvbnRlbnQtTGVuZ3Ro
+        OiAyOTANCkNvbnRlbnQtVHlwZTogaW1hZ2UvcG5nDQpDb250ZW50LVRyYW5z
+        ZmVyLUVuY29kaW5nOiBiaW5hcnkNCg0KiVBORw0KGgoAAAANSUhEUgAAAIAA
+        AACAAQMAAAD58POIAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQA
+        APoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABlBMVEUAgAD///8UPy9P
+        AAAAAWJLR0QB/wIt3gAAAAd0SU1FB98FDQYmHbFjwLgAAAAZSURBVEjHY2AY
+        BaNgFIyCUTAKRsEooC8AAAiAAAFuKx1UAAAAJXRFWHRkYXRlOmNyZWF0ZQAy
+        MDE1LTA1LTEzVDA2OjM4OjI5KzA5OjAwIXGuCAAAACV0RVh0ZGF0ZTptb2Rp
+        ZnkAMjAxNS0wNS0xM1QwNjozODoyOSswOTowMFAsFrQAAAAASUVORK5CYIIN
+        Ci0tLS0tLS0tLS0tLS1SdWJ5TXVsdGlwYXJ0UG9zdC0tDQoNCg==
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Washbullet Ruby Gem 0.4.0
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost
+      Content-Length:
+      - '1162'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Ratelimit-Reset:
+      - '1462346621'
+      X-Ratelimit-Limit:
+      - '16384'
+      X-Ratelimit-Remaining:
+      - '16381'
+      Date:
+      - Wed, 04 May 2016 06:58:25 GMT
+      Content-Type:
+      - text/html
+      Server:
+      - Google Frontend
+      Content-Length:
+      - '0'
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="33,32,31,30,29,28,27,26,25"
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 04 May 2016 06:58:28 GMT
+- request:
+    method: post
+    uri: https://api.pushbullet.com/v2/upload-request
+    body:
+      encoding: UTF-8
+      string: file_name=Green&file_type=image%2Fpng
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Washbullet Ruby Gem 0.4.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - Bearer <API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '16384'
+      X-Ratelimit-Remaining:
+      - '16088'
+      X-Ratelimit-Reset:
+      - '1462451509'
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 05 May 2016 11:53:46 GMT
+      Server:
+      - Google Frontend
+      Cache-Control:
+      - private
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="33,32,31,30,29,28,27,26,25"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"acl":"public-read","awsaccesskeyid":"AKIAJJIUQPUDGPM4GD3W","content-type":"image/png","key":"lJCSSUM8ujDgiVXsMFUrEi95VqCsN8ft/Green","policy":"eyKjb25kaXRpb25zIjTE6MzcuMjM0MTMwWiJ9","signature":"UX5s1uIy1ov6+xlj58JY7rGFKcs="},"file_name":"Green","file_type":"image/png","file_url":"https://dl2.pushbulletusercontent.com/lJCSSUM8ujDgiVXsMFUrEi95VqCsN8ft/Green","upload_url":"https://upload.pushbullet.com/upload-legacy/qhJtxob6Klfpz7lbVYoZBmh2piWKYAIe"}'
+    http_version: 
+  recorded_at: Thu, 05 May 2016 11:53:46 GMT
+- request:
+    method: post
+    uri: https://upload.pushbullet.com/upload-legacy/qhJtxob6Klfpz7lbVYoZBmh2piWKYAIe
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        LS0tLS0tLS0tLS0tLVJ1YnlNdWx0aXBhcnRQb3N0DQpDb250ZW50LURpc3Bv
+        c2l0aW9uOiBmb3JtLWRhdGE7IG5hbWU9ImFjbCINCg0KcHVibGljLXJlYWQN
+        Ci0tLS0tLS0tLS0tLS1SdWJ5TXVsdGlwYXJ0UG9zdA0KQ29udGVudC1EaXNw
+        b3NpdGlvbjogZm9ybS1kYXRhOyBuYW1lPSJhd3NhY2Nlc3NrZXlpZCINCg0K
+        QUtJQUpKSVVRUFVER1BNNEdEM1cNCi0tLS0tLS0tLS0tLS1SdWJ5TXVsdGlw
+        YXJ0UG9zdA0KQ29udGVudC1EaXNwb3NpdGlvbjogZm9ybS1kYXRhOyBuYW1l
+        PSJjb250ZW50LXR5cGUiDQoNCmltYWdlL3BuZw0KLS0tLS0tLS0tLS0tLVJ1
+        YnlNdWx0aXBhcnRQb3N0DQpDb250ZW50LURpc3Bvc2l0aW9uOiBmb3JtLWRh
+        dGE7IG5hbWU9ImtleSINCg0KbEpDU1NVTTh1akRnaVZYc01GVXJFaTk1VnFD
+        c044ZnQvR3JlZW4NCi0tLS0tLS0tLS0tLS1SdWJ5TXVsdGlwYXJ0UG9zdA0K
+        Q29udGVudC1EaXNwb3NpdGlvbjogZm9ybS1kYXRhOyBuYW1lPSJwb2xpY3ki
+        DQoNCmV5S2piMjVrYVhScGIyNXpJalRFNk16Y3VNak0wTVRNd1dpSjkNCi0t
+        LS0tLS0tLS0tLS1SdWJ5TXVsdGlwYXJ0UG9zdA0KQ29udGVudC1EaXNwb3Np
+        dGlvbjogZm9ybS1kYXRhOyBuYW1lPSJzaWduYXR1cmUiDQoNClVYNXMxdUl5
+        MW92Nit4bGo1OEpZN3JHRktjcz0NCi0tLS0tLS0tLS0tLS1SdWJ5TXVsdGlw
+        YXJ0UG9zdA0KQ29udGVudC1EaXNwb3NpdGlvbjogZm9ybS1kYXRhOyBuYW1l
+        PSJmaWxlIjsgZmlsZW5hbWU9ImdyZWVuLnBuZyINCkNvbnRlbnQtTGVuZ3Ro
+        OiAyOTANCkNvbnRlbnQtVHlwZTogaW1hZ2UvcG5nDQpDb250ZW50LVRyYW5z
+        ZmVyLUVuY29kaW5nOiBiaW5hcnkNCg0KiVBORw0KGgoAAAANSUhEUgAAAIAA
+        AACAAQMAAAD58POIAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQA
+        APoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABlBMVEUAgAD///8UPy9P
+        AAAAAWJLR0QB/wIt3gAAAAd0SU1FB98FDQYmHbFjwLgAAAAZSURBVEjHY2AY
+        BaNgFIyCUTAKRsEooC8AAAiAAAFuKx1UAAAAJXRFWHRkYXRlOmNyZWF0ZQAy
+        MDE1LTA1LTEzVDA2OjM4OjI5KzA5OjAwIXGuCAAAACV0RVh0ZGF0ZTptb2Rp
+        ZnkAMjAxNS0wNS0xM1QwNjozODoyOSswOTowMFAsFrQAAAAASUVORK5CYIIN
+        Ci0tLS0tLS0tLS0tLS1SdWJ5TXVsdGlwYXJ0UG9zdC0tDQoNCg==
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Washbullet Ruby Gem 0.4.0
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost
+      Content-Length:
+      - '1162'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Ratelimit-Limit:
+      - '16384'
+      X-Ratelimit-Remaining:
+      - '16379'
+      X-Ratelimit-Reset:
+      - '1462450731'
+      Date:
+      - Thu, 05 May 2016 11:53:47 GMT
+      Content-Type:
+      - text/html
+      Server:
+      - Google Frontend
+      Content-Length:
+      - '0'
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="33,32,31,30,29,28,27,26,25"
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 05 May 2016 11:53:47 GMT
+- request:
+    method: post
+    uri: https://api.pushbullet.com/v2/pushes
+    body:
+      encoding: UTF-8
+      string: body&file_name=Green&file_type=image%2Fpng&file_url=https%3A%2F%2Fdl2.pushbulletusercontent.com%2FlJCSSUM8ujDgiVXsMFUrEi95VqCsN8ft%2FGreen&type=file
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Washbullet Ruby Gem 0.4.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - Bearer <API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Remaining:
+      - '16079'
+      X-Ratelimit-Reset:
+      - '1462451509'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '16384'
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 05 May 2016 11:53:48 GMT
+      Server:
+      - Google Frontend
+      Cache-Control:
+      - private
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="33,32,31,30,29,28,27,26,25"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"active":true,"iden":"<IDENTIFIER>","created":1462449228.469666,"modified":1462449228.4784646,"type":"file","dismissed":false,"direction":"self","sender_iden":"<SENDER_IDEN>","sender_email":"<SENDER_EMAIL>","sender_email_normalized":"<SENDER_EMAIL_NORMALIZED>","sender_name":"Hiroshi
+        Yoshida","receiver_iden":"<RECEIVER_IDEN>","receiver_email":"<RECEIVER_EMAIL>","receiver_email_normalized":"<RECEIVER_EMAIL_NORMALIZED>","file_name":"Green","file_type":"image/png","file_url":"https://dl2.pushbulletusercontent.com/lJCSSUM8ujDgiVXsMFUrEi95VqCsN8ft/Green","image_width":128,"image_height":128,"image_url":"https://lh3.googleusercontent.com/LefUK8ifN66jZ-s84kXI9QZlHGZYIBC5Nv6umfJA36CVkqVA2BaMg_iGsMYe7m9zpaat6GlWl1olmMocBKOMyHN5nUM"}'
+    http_version: 
+  recorded_at: Thu, 05 May 2016 11:53:48 GMT
+recorded_with: VCR 3.0.1

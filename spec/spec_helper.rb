@@ -25,9 +25,30 @@ VCR.configure do |config|
 
     response['iden'] = '<IDENTIFIER>' if response.has_key?('iden')
 
+    %w(sender receiver).each do |type|
+      %W(#{type}_iden #{type}_email #{type}_email_normalized).each do |attr|
+        response[attr] = "<#{attr.upcase}>" if response.has_key?(attr)
+      end
+    end
+
+    # me
+    %w(name email email_normalized).each do |attr|
+      response[attr] = "<#{attr.upcase}>" if response.has_key?(attr)
+    end
+
     %w(devices contacts subscriptions).each do |key|
       response[key] = response[key].map {|entity|
         entity.merge!({'iden' => '<IDENTIFIER>'})
+
+        # contacts
+        %w(name email email_normalized).each do |attr|
+          entity[attr] = "<#{attr.upcase}>" if entity.has_key?(attr)
+        end
+
+        # devices
+        %w(nickname push_token).each do |attr|
+          entity[attr] = "<#{attr.upcase}>" if entity.has_key?(attr)
+        end
 
         if entity['fingerprint']
           entity['fingerprint'] = JSON.parse(entity['fingerprint'])

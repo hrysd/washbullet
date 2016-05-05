@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pushbullet.com/v2/pushes
+    body:
+      encoding: UTF-8
+      string: body=Pushbullet+is+awesome&title=Check+it+out&type=link&url=https%3A%2F%2Fwww.pushbullet.com
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Washbullet Ruby Gem 0.4.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - Bearer <API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '16384'
+      X-Ratelimit-Remaining:
+      - '16038'
+      X-Ratelimit-Reset:
+      - '1462451509'
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 05 May 2016 11:53:50 GMT
+      Server:
+      - Google Frontend
+      Cache-Control:
+      - private
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="33,32,31,30,29,28,27,26,25"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"active":true,"iden":"<IDENTIFIER>","created":1462449229.3419766,"modified":1462449229.3460095,"type":"link","dismissed":false,"direction":"self","sender_iden":"<SENDER_IDEN>","sender_email":"<SENDER_EMAIL>","sender_email_normalized":"<SENDER_EMAIL_NORMALIZED>","sender_name":"Hiroshi
+        Yoshida","receiver_iden":"<RECEIVER_IDEN>","receiver_email":"<RECEIVER_EMAIL>","receiver_email_normalized":"<RECEIVER_EMAIL_NORMALIZED>","title":"Check
+        it out","body":"Pushbullet is awesome","url":"https://www.pushbullet.com"}'
+    http_version: 
+  recorded_at: Thu, 05 May 2016 11:53:50 GMT
+recorded_with: VCR 3.0.1
