@@ -1,16 +1,18 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://api.pushbullet.com/v2/channel-info?tag=docs-hrysd-org
+    method: post
+    uri: https://api.pushbullet.com/v2/pushes
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: body=body&title=title&type=note
     headers:
       Accept:
       - application/json
       User-Agent:
       - Washbullet Ruby Gem 0.4.0
+      Content-Type:
+      - application/x-www-form-urlencoded
       Authorization:
       - Bearer <API_KEY>
       Accept-Encoding:
@@ -23,15 +25,15 @@ http_interactions:
       X-Ratelimit-Limit:
       - '16384'
       X-Ratelimit-Remaining:
-      - '16381'
+      - '16001'
       X-Ratelimit-Reset:
-      - '1462450731'
+      - '1462451509'
       Content-Type:
       - application/json; charset=utf-8
       Vary:
       - Accept-Encoding
       Date:
-      - Thu, 05 May 2016 11:53:44 GMT
+      - Thu, 05 May 2016 11:53:51 GMT
       Server:
       - Google Frontend
       Cache-Control:
@@ -42,8 +44,8 @@ http_interactions:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"iden":"<IDENTIFIER>","name":"<NAME>","tag":"docs-hrysd-org","description":"Notify
-        updates of http://docs.hrysd.org","image_url":"https://s3.amazonaws.com/pushbullet-uploads/ujDZntJ9gzY-3grhPLQ2UFkJxIY4A0X8QxACVMvCsU1D/soymilk.png","subscriber_count":1}'
+      string: '{"active":true,"iden":"<IDENTIFIER>","created":1462449230.8684692,"modified":1462449230.8716338,"type":"note","dismissed":false,"direction":"self","sender_iden":"<SENDER_IDEN>","sender_email":"<SENDER_EMAIL>","sender_email_normalized":"<SENDER_EMAIL_NORMALIZED>","sender_name":"Hiroshi
+        Yoshida","receiver_iden":"<RECEIVER_IDEN>","receiver_email":"<RECEIVER_EMAIL>","receiver_email_normalized":"<RECEIVER_EMAIL_NORMALIZED>","title":"title","body":"body"}'
     http_version: 
-  recorded_at: Thu, 05 May 2016 11:53:44 GMT
+  recorded_at: Thu, 05 May 2016 11:53:51 GMT
 recorded_with: VCR 3.0.1

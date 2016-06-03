@@ -20,9 +20,9 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'bundler'
   gem.add_development_dependency 'pry'
   gem.add_development_dependency 'rake'
-  gem.add_development_dependency 'rspec', '~> 3.2.0'
+  gem.add_development_dependency 'rspec', '~> 3.4.0'
   gem.add_development_dependency 'rubocop'
-  gem.add_development_dependency 'vcr'
+  gem.add_development_dependency 'vcr', '~> 3.0.0'
   gem.add_development_dependency 'webmock'
 
   gem.add_dependency 'faraday', '~> 0.9.0'
